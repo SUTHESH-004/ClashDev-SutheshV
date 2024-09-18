@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./assets/custome-fonts/Clash-Bold.4634e10.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "CustomFont", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

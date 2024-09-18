@@ -7,7 +7,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-
           {/* <Route pah="/home" element ={<HomePage/>}/> */}
           {/* <Route path="/signin" element={<SignIn />} /> */}
           {/* <Route path="/signup" element={<SignUp />} /> */}
