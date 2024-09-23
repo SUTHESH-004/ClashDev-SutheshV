@@ -4,8 +4,11 @@ const LiveChallege = () => {
   const value = 1;
   if (value === 1)
     return (
-      <div>
-        <p>Live</p> <span className="h-1 w-1 bg-blue-700 rounded-full"></span>
+      <div className="pb-4">
+        <p className="text-center">
+          Live <br />
+          Challenges
+        </p>
       </div>
     );
   else if (value === 2)

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { assets } from "../assets/assests";
 
 const WelcomePage = () => {
   const navigate = useNavigate();
@@ -24,7 +25,10 @@ const WelcomePage = () => {
           </button>
         </div>
       </nav>
-      <section className="text-center py-20">
+      <section
+        className="text-center py-20 bg-contain"
+        style={{ backgroundImage: `url(${assets.bargrp})` }}
+      >
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
           Enter the <span className="text-yellow-300">Arena</span> of Code!
         </h1>
