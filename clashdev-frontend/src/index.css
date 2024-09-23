@@ -3,14 +3,24 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "CustomFont";
+  font-family: "CustomFont-Bold";
   src: url("./assets/custome-fonts/Clash-Bold.4634e10.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "CustomFont-Normal";
+  src: url("./assets/custome-fonts/Clash-Regular.5a9432e.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font-family: "CustomFont", sans-serif;
+  font-family: "CustomFont-Bold", sans-serif;
   background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+font-1 {
+  font-family: "CustomFont-Normal";
 }
 
 * {
