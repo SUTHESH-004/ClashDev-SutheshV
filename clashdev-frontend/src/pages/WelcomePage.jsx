@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { assets } from "../assets/assests";
-
+import { Link } from "react-router-dom";
 const WelcomePage = () => {
   const navigate = useNavigate();
   const handleJoinBattle = (event) => {
@@ -11,23 +11,27 @@ const WelcomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b text-white font-sans">
+    <div className="min-h-screen bg-gradient-to-b text-white">
       <nav className="flex justify-between items-center p-6">
         <div className="text-3xl font-bold text-yellow-300">
           <span className="text-blue-100">Clash</span>Dev
         </div>
         <div className="space-x-6">
-          <button className="px-6 py-2 bg-yellow-300 text-blue-900 rounded-xl hover:bg-yellow-300">
-            Sign In
-          </button>
-          <button className="px-6 py-2 bg-yellow-600 text-blue-900 rounded-xl hover:bg-yellow-500">
-            Sign Up
-          </button>
+          <Link to="/sign-in">
+            <button className="px-6 py-2 bg-yellow-300 text-blue-900 rounded-xl hover:bg-yellow-300">
+              Sign In
+            </button>
+          </Link>
+          <Link to="/sign-up">
+            <button className="px-6 py-2 bg-yellow-600 text-blue-900 rounded-xl hover:bg-yellow-500">
+              Sign Up
+            </button>
+          </Link>
         </div>
       </nav>
       <section
         className="text-center py-20 bg-contain"
-        style={{ backgroundImage: `url(${assets.bargrp})` }}
+        // style={{ backgroundImage: `url(${assets.bargrp})` }}
       >
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
           Enter the <span className="text-yellow-300">Arena</span> of Code!

@@ -1,7 +1,13 @@
 import React from "react";
 import { assets } from "../assets/assests";
+import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
+  const nav = useNavigate();
+  const handlesub = (event) => {
+    event.preventDefault();
+    nav("/verify");
+  };
   return (
     <div
       className="h-screen w-screen flex justify-center items-center"
@@ -22,7 +28,7 @@ const SignInPage = () => {
           </h2>
         </div>
 
-        <form className="space-y-4">
+        <form className="space-y-6">
           <div>
             <input
               type="text"
@@ -37,9 +43,18 @@ const SignInPage = () => {
               className="w-full px-4 py-3 text-lg rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-4 focus:ring-yellow-500"
             />
           </div>
+          <p className="ml-2">
+            <a
+              href="/sign-up"
+              className="text-yellow-500 hover:text-yellow-600 font-bold mt-4 text-sm"
+            >
+              forgot password ?
+            </a>
+          </p>
           <div>
             <button
               type="submit"
+              onClick={() => handlesub(event)}
               className="w-full px-4 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg rounded-lg shadow-md hover:shadow-xl transition duration-300"
             >
               Log In
@@ -55,8 +70,6 @@ const SignInPage = () => {
             Sign Up
           </a>
         </p>
-        <p>to reset password</p>
-        <p>to verify code</p>
       </div>
     </div>
   );
