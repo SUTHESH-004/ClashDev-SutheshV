@@ -17,6 +17,7 @@
 body {
   font-family: "CustomFont-Bold", sans-serif;
   background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  background-repeat: no-repeat;
 }
 
 font-1 {

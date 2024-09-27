@@ -4,6 +4,9 @@ import WelcomePage from "./pages/WelcomePage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import VerifyPage from "./pages/verifyPage";
+import LiveChallengesPage from "./pages/LiveChallengesPage";
+// import LeaderBoardPage from "./pages/LeaderBoardPage";
+import CoursesPage from "./pages/Coursespage";
 function App() {
   return (
     <>
@@ -14,6 +17,9 @@ function App() {
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/verify" element={<VerifyPage />} />
+          <Route path="/livechallengespage" element={<LiveChallengesPage />} />
+          {/* <Route path="/leaderboardpage" element={<LeaderBoardPage />} /> */}
+          <Route path="/coursepage" element={<CoursesPage />} />
         </Routes>
       </Router>
     </>
