@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../assets/assests";
 import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
+  const [name, setname] = useState("");
+  const [password, setpassword] = useState("");
   const nav = useNavigate();
   const handlesub = (event) => {
     event.preventDefault();
@@ -33,14 +35,18 @@ const SignInPage = () => {
             <input
               type="text"
               placeholder="Username"
+              value={name}
               className="w-full px-4 py-3 text-lg rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-4 focus:ring-yellow-500"
+              onChange={(e) => setname(e.target.value)}
             />
           </div>
           <div>
             <input
               type="password"
               placeholder="Password"
+              value={password}
               className="w-full px-4 py-3 text-lg rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-4 focus:ring-yellow-500"
+              onChange={(e) => setpassword(e.target.value)}
             />
           </div>
           <p className="ml-2">

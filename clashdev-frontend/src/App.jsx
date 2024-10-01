@@ -16,7 +16,7 @@ function App() {
           <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
-          <Route path="/verify" element={<VerifyPage />} />
+          <Route path="/verifypage" element={<VerifyPage />} />
           <Route path="/livechallengespage" element={<LiveChallengesPage />} />
           {/* <Route path="/leaderboardpage" element={<LeaderBoardPage />} /> */}
           <Route path="/coursepage" element={<CoursesPage />} />
