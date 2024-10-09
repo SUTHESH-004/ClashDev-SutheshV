@@ -6,7 +6,7 @@ import profile from "./dummy-profile-pic.jpg";
 import barbarian from "./barbarian-pointing-large.gif";
 import shelly from "./shelly-large.gif";
 import bargrp from "./bargrp.webp";
-import computer from "./giphy (3).gif";
+import computer from "./computer.gif";
 export const assets = {
   header,
   PvsM,

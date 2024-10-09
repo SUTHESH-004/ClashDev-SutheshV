@@ -10,8 +10,7 @@ const LeaderBoardBar = () => {
         <div className="h-[90%] w-[100%]  flex flex-col items-center pt-2 gap-2">
           {leaderBoardData.map((entry, index) => {
             if (index > 7) {
-              return;
-            }
+              return;}
             return (
               <div className="h-12 w-[100%] bg-black text-white flex items-center rounded-2xl"></div>
             );
