@@ -7,9 +7,13 @@ import VerifyPage from "./pages/verifyPage";
 import LiveChallengesPage from "./pages/LiveChallengesPage";
 import LeaderBoardPage from "./pages/LeaderBoardPage";
 import CoursesPage from "./pages/Coursespage";
+import { UserContextProvider } from "./context/UserContext.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
-    <>
+    <UserContextProvider>
+      <ToastContainer></ToastContainer>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -22,7 +26,7 @@ function App() {
           <Route path="/coursepage" element={<CoursesPage />} />
         </Routes>
       </Router>
-    </>
+    </UserContextProvider>
   );
 }
 

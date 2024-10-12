@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/assests";
 import { useNavigate } from "react-router-dom";
-
+import { useUser } from "../context/UserContext";
+import axios from "axios";
+import { toast } from "react-toastify";
 const SignInPage = () => {
-  const [name, setname] = useState("");
-  const [password, setpassword] = useState("");
+  const { UserStatus, setUserStatus, UserName, setUserName } = useUser();
+  const [name, setname] = useState();
+  const [password, setpassword] = useState(null);
+
   const nav = useNavigate();
   const handlesub = (event) => {
     event.preventDefault();
-    nav("/verify");
+    try {
+      // axios.post("https:localhost:5000");
+      if (name && password) {
+        setUserName(name);
+        setUserStatus(true);
+        nav("/");
+      } else {
+        toast.error("Enter All the required fields");
+      }
+      // nav("/verify");
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div

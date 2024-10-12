@@ -2,16 +2,30 @@ import React from "react";
 import { assets } from "../assets/assests";
 // import { User, Mail } from "lucide-react";
 import { useState } from "react";
+import { useUser } from "../context/UserContext";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
-  const handlesignup = () => {
-    event.preventDefault();
-    console.log(123);
-  };
+  const nav = useNavigate();
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [confirmpassword, setconfirmpassword] = useState("");
+  const { UserStatus, setUserStatus, setUserName, UserName } = useUser();
+  const handlesignup = () => {
+    event.preventDefault();
+    // console.log(123);
+    if (name && password && password === confirmpassword) {
+      setUserName(name);
+      setUserStatus(true);
+      nav("/");
+    } else if (password !== confirmpassword) {
+      toast.error("passwords mismatch");
+    } else {
+      toast.error("Enter all the required fields");
+    }
+  };
 
   return (
     <div
@@ -67,7 +81,7 @@ const SignUpPage = () => {
             <input
               type="password"
               placeholder="Confirm Password"
-              value={password}
+              value={confirmpassword}
               className="w-full px-4 py-3 text-lg rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-4 focus:ring-yellow-500"
               onChange={(e) => setconfirmpassword(e.target.value)}
             />

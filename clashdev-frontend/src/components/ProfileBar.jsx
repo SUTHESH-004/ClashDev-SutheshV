@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/assests";
+import { useUser } from "../context/UserContext";
+
 const ProfileBar = () => {
-  const [name, setName] = useState("V SUTHESH PRAVIN");
+  const { UserStatus, setUserStatus, UserName, setUserName } = useUser();
   return (
     <div className="h-[100px] w-[85%] md:w-[65%] absolute top-[4%] left-0 right-0 mx-auto bg-green-100 rounded-2xl flex items-center">
       <div className="h-[90px] w-[33%] md:w-[50%]">
@@ -11,7 +13,7 @@ const ProfileBar = () => {
       </div>
       <div className="h-[90px] w-[67%] md:w-[50%] flex flex-row justify-center items-center ">
         <div className="h-[90px] w-[60%] flex justify-center items-center text-center bg-yellow-300 text-2xl">
-          V SUTHESH PRAVIN
+          {UserName ? `${UserName}` : "Unknown User"}
         </div>
         <div
           className="relative left-4 md:left-10 h-[150px] w-[150px] bg-white rounded-full flex justify-center items-center bg-no-repeat "

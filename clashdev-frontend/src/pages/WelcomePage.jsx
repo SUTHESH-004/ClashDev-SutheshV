@@ -3,27 +3,39 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { assets } from "../assets/assests";
 import { Link } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 const WelcomePage = () => {
+  const { UserStatus } = useUser();
   const navigate = useNavigate();
   const handleJoinBattle = (event) => {
     event.preventDefault();
-    navigate("/");
+    if (UserStatus) {
+      navigate("/");
+    } else {
+      navigate("/sign-in");
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b text-white">
+    <div
+      className="min-h-screen text-white font-font2"
+      style={{
+        backgroundImage:
+          "radial-gradient(122.23% 100% at 0 100%, #5bc5e8 0, #3780bd 24.76%, #103a8b 55.66%, #021847 100%)",
+      }}
+    >
       <nav className="flex justify-between items-center p-6">
         <div className="text-3xl font-bold text-yellow-300">
-          <span className="text-blue-100">Clash</span>Dev
+          <span className="text-blue-100 font-font1">Clash</span>Dev
         </div>
         <div className="space-x-6">
           <Link to="/sign-in">
-            <button className="px-6 py-2 bg-yellow-300 text-blue-900 rounded-xl hover:bg-yellow-300">
+            <button className="px-6 py-2 bg-yellow-300 text-blue-900 rounded-xl hover:bg-yellow-300 font-font1">
               Sign In
             </button>
           </Link>
           <Link to="/sign-up">
-            <button className="px-6 py-2 bg-yellow-600 text-blue-900 rounded-xl hover:bg-yellow-500">
+            <button className="px-6 py-2 bg-yellow-600 text-blue-900 rounded-xl hover:bg-yellow-500 font-font1">
               Sign Up
             </button>
           </Link>

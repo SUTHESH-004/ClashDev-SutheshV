@@ -8,7 +8,7 @@ import { assets } from "../assets/assests";
 const HomePage = () => {
   return (
     <>
-      <div className="min-h-screen md:h-screen">
+      <div className="min-h-screen md:h-screen font-font1">
         <div className="h-[20vh] w-[100vw]  flex justify-center">
           <ProfileBar></ProfileBar>
         </div>
