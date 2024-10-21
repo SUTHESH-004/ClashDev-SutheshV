@@ -10,14 +10,15 @@ const SignInPage = () => {
   const [password, setpassword] = useState(null);
 
   const nav = useNavigate();
-  const handlesub = (event) => {
+  const handlesub = async (event) => {
     event.preventDefault();
     try {
-      // axios.post("https:localhost:5000");
       if (name && password) {
         setUserName(name);
         setUserStatus(true);
-        nav("/");
+        const response = axios.get("http://localhost:5001/api/auth/sign-in",{name,password});
+        console.log(response);
+        // nav("/");
       } else {
         toast.error("Enter All the required fields");
       }

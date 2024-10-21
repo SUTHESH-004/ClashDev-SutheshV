@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useUser } from "../context/UserContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUpPage = () => {
   const nav = useNavigate();
@@ -13,12 +14,20 @@ const SignUpPage = () => {
   const [password, setpassword] = useState("");
   const [confirmpassword, setconfirmpassword] = useState("");
   const { UserStatus, setUserStatus, setUserName, UserName } = useUser();
-  const handlesignup = () => {
+  const handlesignup = async () => {
+    
     event.preventDefault();
-    // console.log(123);
+
     if (name && password && password === confirmpassword) {
       setUserName(name);
       setUserStatus(true);
+      const username = name;
+      const response = await axios.post("http://localhost:5001/api/auth/add", {
+        username,
+        email,
+        password,
+      });
+      console.log(response);
       nav("/");
     } else if (password !== confirmpassword) {
       toast.error("passwords mismatch");
